@@ -8,7 +8,7 @@ git clone https://github.com/Akane-ogawa/LabReport_Heidelberg_tex.git
 
 ```
 
-## Compile your pdf 
+## How to compile the PDF 
 ```bash
 xelatex LabReport_name.tex
 bibtex LabReport_name
