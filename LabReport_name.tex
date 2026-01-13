@@ -1,0 +1,85 @@
+
+% When you want to compile, run these 4 steps in order.
+% xelatex LabReport_name.tex
+% bibtex LabReport_name
+% xelatex LabReport_name.tex
+% xelatex LabReport_name.tex
+
+\documentclass[openany, a4paper, 12pt]{book}
+\usepackage{multicol} % 柔軟に二段組を使いたい場合に便利
+
+% import packages
+\usepackage[pdfborder={0 0 0}, colorlinks=false]{hyperref} 
+\usepackage{graphicx}
+\usepackage{xeCJK}
+\usepackage[font=small,labelfont=bf]{caption} 
+\usepackage{subcaption}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{fontspec}  
+\usepackage{booktabs}  
+\usepackage{placeins}
+\usepackage[version=4]{mhchem}
+
+% reference settings
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*{\bibname}}{\chapter{\bibname}}{}{}
+\renewcommand{\bibname}{References}
+% chapter settings
+\makeatletter
+\patchcmd{\chapter}{\clearpage}{}{}{}
+\patchcmd{\chapter}{\cleardoublepage}{}{}{}
+\makeatother
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\normalfont\Large\bfseries} 
+  {}                           
+  {0pt}
+  {}
+% ToC settings
+\usepackage{tocloft} 
+\setlength{\cftbeforesecskip}{4pt}      % section margin
+\setlength{\cftbeforesubsecskip}{2pt}   % subsection margin
+% List of figures
+\renewcommand{\cftfigpresnum}{Figure~}  
+\renewcommand{\cftfignumwidth}{7em}     
+% List of tables
+\renewcommand{\cfttabpresnum}{Table~}   
+\renewcommand{\cfttabnumwidth}{7em}    
+
+\usepackage[justification=raggedright,singlelinecheck=false]{caption} 
+\pagestyle{plain}
+
+% -----------------------------------------------------
+
+% title of the course
+\newcommand{\etitle}{title of the course}
+\setmainfont{Times New Roman} % font
+
+\begin{document}
+% --- タイトルページなどは一段 ---
+\onecolumn 
+\thispagestyle{empty}
+\include{titlepage}
+\setcounter{page}{1}  % page count starts from 1
+\pagestyle{plain}
+\input{abstract}
+
+\tableofcontents
+% \clearpage
+% \listoffigures   % 図の一覧（List of Figures）
+% \listoftables    % 表の一覧（List of Tables）
+% \clearpage
+
+\input{01_intro}
+\input{02_method}
+\input{03_result}
+\input{04_discussion}
+\bibliographystyle{unsrt}
+\bibliography{ref.bib}
+\input{appendix}
+
+\end{document}
