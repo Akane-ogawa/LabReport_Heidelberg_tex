@@ -34,13 +34,14 @@
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
-\setcounter{tocdepth}{2} % section + subsection まで表示
-\setcounter{secnumdepth}{3} % subsubsection まで番号付け
 
 % ToC settings
 \usepackage{tocloft} 
 \setlength{\cftbeforesecskip}{4pt}      % section margin
 \setlength{\cftbeforesubsecskip}{2pt}   % subsection margin
+\setcounter{tocdepth}{2} % section + subsection まで表示
+\setcounter{secnumdepth}{3} % subsubsection まで番号付け
+
 % List of figures
 \renewcommand{\cftfigpresnum}{Figure~}  
 \renewcommand{\cftfignumwidth}{7em}     
@@ -54,7 +55,7 @@
 % -----------------------------------------------------
 
 % title of the course
-\newcommand{\etitle}{Introduction into studying fatty acid and lipid metabolism}
+\newcommand{\etitle}{Title of the course}
 \setmainfont{Times New Roman} % font
 
 \begin{document}
