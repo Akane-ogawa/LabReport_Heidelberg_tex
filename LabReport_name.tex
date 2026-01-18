@@ -1,9 +1,15 @@
 
+% title of the course
+\newcommand{\etitle}{Title of the course}
+
+% -----------------------------------------------------
 % When you want to compile, run these 4 steps in order.
 % xelatex LabReport_name.tex
 % bibtex LabReport_name
 % xelatex LabReport_name.tex
 % xelatex LabReport_name.tex
+% -----------------------------------------------------
+
 
 \documentclass[openany, a4paper, 12pt]{book}
 
@@ -11,10 +17,10 @@
 \usepackage[pdfborder={0 0 0}, colorlinks=false]{hyperref} 
 \usepackage{graphicx}
 \usepackage{xeCJK}
-\usepackage[font=small,labelfont=bf]{caption} 
+\usepackage[font=small,labelfont=bf,justification=raggedright,singlelinecheck=false]{caption}
+\pagestyle{plain}
 \usepackage{subcaption}
 \usepackage[a4paper, margin=2.5cm]{geometry}
-\usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{fancyhdr}
 \usepackage{float}
@@ -24,7 +30,7 @@
 \usepackage[version=4]{mhchem}
 \usepackage{etoolbox}
 
-% section settings
+% chapter settings
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
@@ -42,13 +48,8 @@
 \renewcommand{\cfttabpresnum}{Table~}   
 \renewcommand{\cfttabnumwidth}{7em}    
 
-\usepackage[justification=raggedright,singlelinecheck=false]{caption} 
-\pagestyle{plain}
-
 % -----------------------------------------------------
 
-% title of the course
-\newcommand{\etitle}{Title of the course}
 \setmainfont{Times New Roman} % font
 
 \begin{document}
